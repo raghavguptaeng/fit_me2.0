@@ -2,8 +2,8 @@ import 'package:fit_me/constants.dart';
 import 'package:flutter/material.dart';
 
 class SignUp extends StatelessWidget {
-  const SignUp({Key? key}) : super(key: key);
   static String id = '/Signup';
+  String first_name = '' , last_name = '' , email = '' , password = '';
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
@@ -31,7 +31,7 @@ class SignUp extends StatelessWidget {
                             prefixIcon: Icon(Icons.person),
                           ),
                           onChanged: (value){
-
+                            this.first_name = value;
                           },
                           keyboardType: TextInputType.emailAddress,
                           style: TextStyle(
@@ -47,7 +47,7 @@ class SignUp extends StatelessWidget {
                             labelText: "Last Name",
                           ),
                           onChanged: (value){
-
+                            this.last_name = value;
                           },
                           keyboardType: TextInputType.emailAddress,
                           style: TextStyle(
@@ -62,7 +62,7 @@ class SignUp extends StatelessWidget {
                               hintText: "Email",
                               prefixIcon: Icon(Icons.email_outlined,)),
                           onChanged: (value){
-
+                              this.email = value;
                           },
                           keyboardType: TextInputType.emailAddress,
                           style: TextStyle(
@@ -76,7 +76,7 @@ class SignUp extends StatelessWidget {
                           decoration: kInputTextDecoration.copyWith(prefixIcon: Icon(Icons.password),
                             labelText: "Password",),
                           onChanged: (value){
-
+                            this.password = value;
                           },
                           keyboardType: TextInputType.emailAddress,
                           style: TextStyle(
