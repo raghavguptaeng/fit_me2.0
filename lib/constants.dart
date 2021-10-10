@@ -27,3 +27,10 @@ TextStyle kSubTextStyle = GoogleFonts.poppins(
     fontSize: 14,
     color: Colors.black
 );
+InputDecoration kInputTextDecoration = InputDecoration(
+  fillColor: Colors.white,
+  border: OutlineInputBorder(
+    borderRadius: BorderRadius.circular(25.0),
+    borderSide: BorderSide(),
+  ),
+);

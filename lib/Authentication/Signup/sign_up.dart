@@ -23,13 +23,9 @@ class SignUp extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: TextFormField(
-                      decoration: InputDecoration(
-                        labelText: "First Name",
-                        fillColor: Colors.white,
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(25.0),
-                          borderSide: BorderSide(),
-                        ),
+                      decoration: kInputTextDecoration.copyWith(
+                          hintText: "First Name",
+                        prefixIcon: Icon(Icons.person),
                       ),
                       onChanged: (value){
 
@@ -43,13 +39,9 @@ class SignUp extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: TextFormField(
-                      decoration: InputDecoration(
+                      decoration: kInputTextDecoration.copyWith(
+                        prefixIcon: Icon(Icons.person),
                         labelText: "Last Name",
-                        fillColor: Colors.white,
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(25.0),
-                          borderSide: BorderSide(),
-                        ),
                       ),
                       onChanged: (value){
 
@@ -63,14 +55,9 @@ class SignUp extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: TextFormField(
-                      decoration: InputDecoration(
-                        labelText: "Email",
-                        fillColor: Colors.white,
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(25.0),
-                          borderSide: BorderSide(),
-                        ),
-                      ),
+                      decoration: kInputTextDecoration.copyWith(
+                          hintText: "Email",
+                          prefixIcon: Icon(Icons.email_outlined,)),
                       onChanged: (value){
 
                       },
@@ -83,14 +70,8 @@ class SignUp extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: TextFormField(
-                      decoration: InputDecoration(
-                        labelText: "Password",
-                        fillColor: Colors.white,
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(25.0),
-                          borderSide: BorderSide(),
-                        ),
-                      ),
+                      decoration: kInputTextDecoration.copyWith(prefixIcon: Icon(Icons.password),
+                        labelText: "Password",),
                       onChanged: (value){
 
                       },
