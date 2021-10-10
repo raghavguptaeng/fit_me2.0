@@ -1,3 +1,4 @@
+import 'package:fit_me/Authentication/Signup/sign_up.dart';
 import 'package:fit_me/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -15,7 +16,7 @@ class Splash4 extends StatelessWidget {
         subText: "Improve the quality of your sleep with us, good quality sleep can bring a good mood in the morning",
         img: "splash4.png",
         butt: "splash4_button.png",
-        nextScr: "",
+        nextScr: SignUp.id,
       ),
     );
   }
