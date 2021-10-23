@@ -1,3 +1,4 @@
+import 'package:fit_me/Authentication/Signup/take_user_details.dart';
 import 'package:fit_me/constants.dart';
 import 'package:flutter/material.dart';
 
@@ -19,21 +20,8 @@ class SignUp extends StatelessWidget {
               children: [
                 TopHeading(),
                 UserDetails(height, width),
-                RegisterButtonAndSignUPWithGoogle(height, width),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text("Already have an account ?",style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 16
-                    ),),
-                    SizedBox(width: 10,),
-                    Text("Login",style: TextStyle(
-                      fontSize: 16,
-                      color:Colors.purpleAccent
-                    ),)
-                  ],
-                )
+                RegisterButtonAndSignUPWithGoogle(height, width, context),
+                LoginIfAccountPresent()
               ],
             ),
           ),
@@ -42,20 +30,42 @@ class SignUp extends StatelessWidget {
     );
   }
 
-  Container RegisterButtonAndSignUPWithGoogle(double height, double width) {
+  Row LoginIfAccountPresent() {
+    return Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text("Already have an account ?",style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 16
+                  ),),
+                  SizedBox(width: 10,),
+                  Text("Login",style: TextStyle(
+                    fontSize: 16,
+                    color:Colors.purpleAccent
+                  ),)
+                ],
+              );
+  }
+
+  Container RegisterButtonAndSignUPWithGoogle(double height, double width , context) {
     return Container(
-                margin: EdgeInsets.fromLTRB(0, 0, 0, 20),
+                margin: EdgeInsets.fromLTRB(0, 20, 0, 30),
                 child: Column(
                   children: [
-                    Container(
-                      height: height * 0.08,
-                      width: width * 0.8,
-                      decoration: kRoundedBigButton,
-                      child: Center(
-                        child: Text(
-                          "Register",
-                          style:
-                              kBigTextHeading.copyWith(color: Colors.white),
+                    GestureDetector(
+                      onTap: (){
+                        Navigator.pushReplacementNamed(context, GetUserDetails.id );
+                      },
+                      child: Container(
+                        height: height * 0.08,
+                        width: width * 0.8,
+                        decoration: kRoundedBigButton,
+                        child: Center(
+                          child: Text(
+                            "Register",
+                            style:
+                                kBigTextHeading.copyWith(color: Colors.white),
+                          ),
                         ),
                       ),
                     ),

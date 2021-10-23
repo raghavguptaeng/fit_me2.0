@@ -1,4 +1,5 @@
 import 'package:fit_me/Authentication/Signup/sign_up.dart';
+import 'package:fit_me/Authentication/Signup/take_user_details.dart';
 import 'package:fit_me/Splash%20Screens/splash_1.dart';
 import 'package:fit_me/Splash%20Screens/welcome.dart';
 import 'package:flutter/material.dart';
@@ -24,6 +25,7 @@ class init extends StatelessWidget {
         Splash3.id:(context)=>Splash3(),
         Splash4.id:(context)=>Splash4(),
         SignUp.id:(context)=>SignUp(),
+        GetUserDetails.id:(context)=>GetUserDetails(),
       },
     );
   }
