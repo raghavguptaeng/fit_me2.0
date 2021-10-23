@@ -15,7 +15,7 @@ class Splash1 extends StatelessWidget {
         Heading: "Track Your Goal",
         subText: "Don't worry if you have trouble determining your goals, We can help you determine your goals and track your goals",
         img: "splash1.png",
-        butt: "Splash1_Button.png",
+        butt: "Splash1_button.png",
         nextScr: Splash2.id,
       ),
     );
