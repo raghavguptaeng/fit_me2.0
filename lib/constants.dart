@@ -34,3 +34,15 @@ InputDecoration kInputTextDecoration = InputDecoration(
     borderSide: BorderSide(),
   ),
 );
+const kPurple_linear = LinearGradient(
+  colors: [
+    Color(0xFFEEA4CE),
+    Color(0xFFC58BF2),
+  ],
+  begin: Alignment.centerLeft,
+  end: Alignment.centerRight,
+);
+const kRoundedContainer = BoxDecoration(
+    gradient: kPurple_linear,
+    borderRadius: BorderRadius.all(Radius.circular(15))
+);
