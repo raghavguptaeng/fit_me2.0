@@ -106,7 +106,7 @@ class GetUserDetails extends StatelessWidget {
                             width: height*0.06,
                             height: height*0.06,
                             child: Center(
-                              child: Text("KG",style: kBigTextHeading.copyWith(fontSize: 15,color: Colors.white),),
+                              child: Text("Ft5.10",style: kBigTextHeading.copyWith(fontSize: 15,color: Colors.white),),
                             ),
                             decoration: kRoundedContainer,
                           )

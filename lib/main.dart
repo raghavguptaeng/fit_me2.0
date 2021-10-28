@@ -5,6 +5,7 @@ import 'package:fit_me/Splash%20Screens/splash_1.dart';
 import 'package:fit_me/Splash%20Screens/welcome.dart';
 import 'package:flutter/material.dart';
 
+import 'Authentication/Login/login.dart';
 import 'Splash Screens/splash_2.dart';
 import 'Splash Screens/splash_3.dart';
 import 'Splash Screens/splash_4.dart';
@@ -28,6 +29,7 @@ class init extends StatelessWidget {
         SignUp.id:(context)=>SignUp(),
         GetUserDetails.id:(context)=>GetUserDetails(),
         GetUserPreference.id:(context)=>GetUserPreference(),
+        Login.id:(context)=>Login(),
       },
     );
   }

@@ -1,4 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:fit_me/Authentication/Login/login.dart';
 import 'package:flutter/material.dart';
 
 import '../../constants.dart';
@@ -15,7 +16,7 @@ class GetUserPreference extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            greeting(),
+            greeting(width),
             CarouselSlider(
               items: [
                 PreferenceCard(
@@ -43,19 +44,20 @@ class GetUserPreference extends StatelessWidget {
               ],
               options: CarouselOptions(
                 enlargeCenterPage: true,
-                aspectRatio: 0.80,
+                aspectRatio: 0.70,
               ),
             ),
             Container(
               width: width * 0.8,
               height: height * 0.1,
               margin: EdgeInsets.fromLTRB(0, 0, 0, 20),
-              decoration: kRoundedBigButton,
-              child: Center(
-                  child: Text(
-                "Next",
-                style: kBigButtonText,
-              )),
+              child: Text(
+                "Tap on the path you wish to follow",
+                style: kSubTextStyle.copyWith(
+                  fontSize: 16,
+                ),
+                textAlign: TextAlign.center,
+              ),
             ),
           ],
         ),
@@ -63,8 +65,9 @@ class GetUserPreference extends StatelessWidget {
     );
   }
 
-  Container greeting() {
+  Container greeting(width) {
     return Container(
+      width: width*0.7,
       child: Center(
         child: Column(
           children: [
@@ -77,6 +80,7 @@ class GetUserPreference extends StatelessWidget {
               style: kSubTextStyle.copyWith(
                 fontSize: 16,
               ),
+              textAlign: TextAlign.center,
             ),
           ],
         ),
@@ -100,28 +104,34 @@ class PreferenceCard extends StatelessWidget {
   final String img, heading, subtext;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: width * 0.8,
-      height: height * 0.5,
-      decoration: kRoundedContainer.copyWith(gradient: kBlue_linear),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          Image.asset('Assets/SplashLogo/${this.img}'),
-          Text(
-            this.heading,
-            style: kBigTextHeading.copyWith(color: Colors.white),
-          ),
-          Container(
-            width: width * 0.6,
-            child: Text(
-              this.subtext,
-              softWrap: true,
-              textAlign: TextAlign.center,
-              style: kSubTextStyle.copyWith(color: Colors.white),
+    return GestureDetector(
+      onTap: (){
+        //Todo: add code to signup the user according to defined preference
+        Navigator.pushReplacementNamed(context, Login.id);
+      },
+      child: Container(
+        width: width * 0.8,
+        height: height * 0.65,
+        decoration: kRoundedContainer.copyWith(gradient: kBlue_linear),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Image.asset('Assets/SplashLogo/${this.img}'),
+            Text(
+              this.heading,
+              style: kBigTextHeading.copyWith(color: Colors.white),
             ),
-          )
-        ],
+            Container(
+              width: width * 0.6,
+              child: Text(
+                this.subtext,
+                softWrap: true,
+                textAlign: TextAlign.center,
+                style: kSubTextStyle.copyWith(color: Colors.white),
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
