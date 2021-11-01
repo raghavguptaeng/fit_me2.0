@@ -1,3 +1,4 @@
+import 'package:fit_me/Home/home.dart';
 import 'package:fit_me/constants.dart';
 import 'package:flutter/material.dart';
 
@@ -20,8 +21,8 @@ class Greeting extends StatelessWidget {
             GestureDetector(
               onTap: () {
                 // Navigator.pushReplacementNamed(context, GetUserDetails.id );
-                //todo:send user name to greeting screen
-                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>Greeting('Raghav')));
+                //todo:send user name and user id to home screen
+                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>Home(Uname: 'Raghav', uid: 'demo')));
               },
               child: Container(
                   height: height * 0.08,
