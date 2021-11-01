@@ -21,11 +21,46 @@ class _HomeState extends State<Home> {
             children: [
               TopGreeting(width),
               BmiCard(width, height),
+              Today_Target_card(width, height)
             ],
           ),
         ),
       ),
     );
+  }
+
+  Container Today_Target_card(double width, double height) {
+    return Container(
+              width: width*0.9,
+              height: height*0.08,
+              decoration: BoxDecoration(
+                  color: Color(0xFFCCDCFD),
+                  borderRadius: BorderRadius.circular(25)
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Text("Today Target",style: kBigTextHeading.copyWith(fontSize: 15),),
+                  GestureDetector(
+                    onTap: () {
+                      //todo:add Target Button Here
+                    },
+                    child: Container(
+                        height: height * 0.05,
+                        width: width * 0.25,
+                        decoration: kRoundedBigButton.copyWith(
+                            gradient: kPurple_linear
+                        ),
+                        child: Center(
+                          child: Text(
+                            "Check",
+                            style: kBigTextHeading.copyWith(color: Colors.white,fontSize: 13),
+                          ),
+                        )),
+                  ),
+                ],
+              ),
+            );
   }
 
   Padding TopGreeting(width) {
@@ -83,7 +118,7 @@ class _HomeState extends State<Home> {
               ),
               GestureDetector(
                 onTap: () {
-                  //todo:send user name and user id to home screen
+                  //todo:add bmi details
                 },
                 child: Container(
                     height: height * 0.05,

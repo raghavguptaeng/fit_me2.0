@@ -19,7 +19,8 @@ class init extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      initialRoute: welcome.id,
+      // initialRoute: welcome.id,
+      initialRoute: Login.id,
       routes: {
         welcome.id:(context)=>welcome(),
         Splash1.id:(context)=>Splash1(),
