@@ -1,4 +1,5 @@
 import 'package:fit_me/constants.dart';
+import 'package:fit_me/graph/activity_status.dart';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 class Home extends StatefulWidget {
@@ -18,10 +19,19 @@ class _HomeState extends State<Home> {
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               TopGreeting(width),
-              BmiCard(width, height),
-              Today_Target_card(width, height)
+              Center(child: BmiCard(width, height)),
+              Center(child: Today_Target_card(width, height)),
+              Padding(
+                padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+                child: Text(
+                    'Activity Status',
+                    style: kBigTextHeading.copyWith(fontSize: 20)
+                ),
+              ),
+              ActivityStatus()
             ],
           ),
         ),
@@ -91,6 +101,7 @@ class _HomeState extends State<Home> {
               ),
             );
   }
+
   Container BmiCard(double width, double height) {
     return Container(
       margin: EdgeInsets.all(10),
