@@ -112,7 +112,7 @@ class _LineChart extends StatelessWidget {
   LineChartBarData get lineChartBarData1_2 => LineChartBarData(
     isCurved: true,
     colors: [const Color(0xffaa4cfc)],
-    barWidth: 8,
+    barWidth: 4,
     isStrokeCapRound: true,
     dotData: FlDotData(show: false),
     belowBarData: BarAreaData(show: false, colors: [

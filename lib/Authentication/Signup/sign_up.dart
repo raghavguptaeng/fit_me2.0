@@ -1,5 +1,5 @@
 import 'package:fit_me/Authentication/Signup/take_user_details.dart';
-import 'package:fit_me/constants.dart';
+import 'package:fit_me/contants/constants.dart';
 import 'package:flutter/material.dart';
 
 class SignUp extends StatelessWidget {

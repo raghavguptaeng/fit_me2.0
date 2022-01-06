@@ -1,5 +1,5 @@
 import 'package:fit_me/Home/home.dart';
-import 'package:fit_me/constants.dart';
+import 'package:fit_me/contants/constants.dart';
 import 'package:flutter/material.dart';
 
 class Greeting extends StatelessWidget {

@@ -1,5 +1,7 @@
-import 'package:fit_me/constants.dart';
+import 'package:fit_me/Home/innerComponents/water_intake.dart';
+import 'package:fit_me/contants/constants.dart';
 import 'package:fit_me/graph/activity_status.dart';
+import 'package:fit_me/graph/water.dart';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 class Home extends StatefulWidget {
@@ -24,19 +26,42 @@ class _HomeState extends State<Home> {
               TopGreeting(width),
               Center(child: BmiCard(width, height)),
               Center(child: Today_Target_card(width, height)),
-              Padding(
-                padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
-                child: Text(
-                    'Activity Status',
-                    style: kBigTextHeading.copyWith(fontSize: 20)
-                ),
-              ),
-              ActivityStatus()
+              ActivityStatusText(),
+              ActivityStatus(),
+              ActivityContent(width, height),
+              SizedBox(height: height*0.2,),
             ],
           ),
         ),
       ),
     );
+  }
+
+  Container ActivityContent(double width, double height) {
+    return Container(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  WaterIntake(),
+                  Column(
+                    children: [
+                    Container(width: width*0.4,height: height*0.23,decoration: kShadowContainer,),
+                    SizedBox(height: height*0.04,),
+                    Container(width: width*0.4,height: height*0.23,decoration: kShadowContainer,)
+                  ],)
+                ],
+              ),
+            );
+  }
+
+  Padding ActivityStatusText() {
+    return Padding(
+              padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+              child: Text(
+                  'Activity Status',
+                  style: kBigTextHeading.copyWith(fontSize: 20)
+              ),
+            );
   }
 
   Container Today_Target_card(double width, double height) {

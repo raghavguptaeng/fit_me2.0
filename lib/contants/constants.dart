@@ -34,6 +34,14 @@ const kPurple_linear = LinearGradient(
   begin: Alignment.centerLeft,
   end: Alignment.centerRight,
 );
+const kWaterIntakeLinear = LinearGradient(
+  colors: [
+    Color(0xFFC58BF2),
+    Color(0xFFB4C0FE),
+  ],
+  begin: Alignment.topCenter,
+  end: Alignment.bottomCenter,
+);
 const kRoundedContainer = BoxDecoration(
     gradient: kPurple_linear,
     borderRadius: BorderRadius.all(Radius.circular(15)));
@@ -45,3 +53,34 @@ BoxDecoration kBmiCardDecoration = BoxDecoration(
     ),
     borderRadius: BorderRadius.circular(25)
 );
+
+BoxDecoration kShadowContainer = BoxDecoration(
+    color: Colors.white,
+    borderRadius: BorderRadius.circular(15),
+    boxShadow: [
+      BoxShadow(
+        color: Colors.grey,
+        offset: Offset(3.0, 3.0),
+        blurRadius: 5.0,
+        spreadRadius: 2.0,
+      ),
+    ]
+);
+
+TextStyle klinearTextBlue(width){
+  return TextStyle(
+      fontWeight: FontWeight.bold,
+      fontSize: width * 0.045,
+      foreground: Paint()
+        ..shader = kBlue_linear.createShader(Rect.largest),
+  );
+}
+
+TextStyle klinearTextPurple(width){
+  return TextStyle(
+    fontWeight: FontWeight.bold,
+    fontSize: width * 0.045,
+    foreground: Paint()
+      ..shader = kPurple_linear.createShader(Rect.largest),
+  );
+}

@@ -1,7 +1,7 @@
 // ignore: file_names
 import 'package:flutter/material.dart';
 
-import '../constants.dart';
+import '../contants/constants.dart';
 
 class Splash extends StatelessWidget {
   var Heading,subText,img,butt,nextScr;

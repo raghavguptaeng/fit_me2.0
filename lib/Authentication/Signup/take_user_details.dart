@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import '../../constants.dart';
+import '../../contants/constants.dart';
 class GetUserDetails extends StatelessWidget {
   const GetUserDetails({Key? key}) : super(key: key);
   static String id = '/getuserdetails';

@@ -1,7 +1,9 @@
 // ignore: file_names
 import 'package:fit_me/Splash%20Screens/splash_1.dart';
-import 'package:fit_me/constants.dart';
+import 'package:fit_me/contants/constants.dart';
 import 'package:flutter/material.dart';
+
+import 'splash_2.dart';
 
 class welcome extends StatelessWidget {
   static String id = '/welcomeScreen';
@@ -31,7 +33,7 @@ class welcome extends StatelessWidget {
               ),
             ),
             onTap: (){
-              Navigator.pushReplacementNamed(context, Splash1.id);
+              Navigator.pushReplacementNamed(context, Splash2.id);
             },
           ),
         ],
