@@ -2,7 +2,7 @@ import 'package:fit_me/models/water_intake.dart';
 import 'package:get/state_manager.dart';
 
 class WaterControllers extends GetxController{
-  List water = <WaterIntakeModel>[].obs;
+  var water = <WaterIntakeModel>[].obs;
   @override
   void onInit() {
     super.onInit();
