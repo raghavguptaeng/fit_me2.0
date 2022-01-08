@@ -32,11 +32,21 @@ class _CaloriesChartState extends State<CaloriesChart> {
       /// It used to set the annotation on circular chart.
       annotations: <CircularChartAnnotation>[
         CircularChartAnnotation(
+            height: '210%',
+            width: '210%',
+            widget: PhysicalModel(
+              shape: BoxShape.circle,
+              elevation: 0,
+              shadowColor: Colors.black,
+              color: Colors.white,
+              child: Container(),
+            )),
+        CircularChartAnnotation(
             height: '170%',
             width: '170%',
             widget: PhysicalModel(
               shape: BoxShape.circle,
-              elevation: 10,
+              elevation: 15,
               shadowColor: Colors.black,
               color: Color(0xFF92A3FD),
               child: Container(),
@@ -73,7 +83,7 @@ class _CaloriesChartState extends State<CaloriesChart> {
           ],
           cornerStyle: corner.CornerStyle.bothCurve,
           animationDuration: 2,
-          radius: '60',
+          radius: '70',
           xValueMapper: (ChartSampleData data, _) => data.x as String,
           yValueMapper: (ChartSampleData data, _) => data.y,
           pointColorMapper: (ChartSampleData data, _) => data.pointColor)
