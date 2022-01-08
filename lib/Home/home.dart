@@ -1,4 +1,5 @@
 import 'package:fit_me/Home/innerComponents/calories.dart';
+import 'package:fit_me/Home/innerComponents/steps.dart';
 import 'package:fit_me/Home/innerComponents/water_intake.dart';
 import 'package:fit_me/contants/constants.dart';
 import 'package:fit_me/graph/activity_status.dart';
@@ -47,7 +48,7 @@ class _HomeState extends State<Home> {
                   WaterIntake(),
                   Column(
                     children: [
-                    Container(width: width*0.4,height: height*0.23,decoration: kShadowContainer,),
+                    Steps(),
                     SizedBox(height: height*0.04,),
                     Calories(),
                   ],)
