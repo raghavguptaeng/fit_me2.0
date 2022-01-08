@@ -23,7 +23,7 @@ class WaterIntake extends StatelessWidget {
           Container(
             height: height * 0.45,
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Column(
@@ -41,7 +41,7 @@ class WaterIntake extends StatelessWidget {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('Real time updates',style: kSubTextStyle.copyWith(fontSize: width*0.035),),
+                    Text('Real time updates',style: kSubTextStyle.copyWith(fontSize: width*0.030),),
                     waterIntake(width,'6am - 8am',600),
                     waterIntake(width,'9am - 11am',500),
                     waterIntake(width,'11am - 2pm',1000),
@@ -63,8 +63,8 @@ class WaterIntake extends StatelessWidget {
       child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(time,style: kSubTextStyle,),
-                        Text('${intake.toString()}ml',style: klinearTextPurple(width*0.9),)
+                        Text(time,style: kSubTextStyle.copyWith(fontSize: width*0.025),),
+                        Text('${intake.toString()}ml',style: klinearTextPurple(width*0.6),)
                       ],
                     ),
     );

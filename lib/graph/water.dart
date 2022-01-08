@@ -20,7 +20,7 @@ class _WaterGraphState extends State<WaterGraph> {
         showLabels: false,
         showTicks: false,
         axisTrackStyle: LinearAxisTrackStyle(
-          thickness: 10,
+          thickness: 20,
           edgeStyle: LinearEdgeStyle.bothCurve,
           borderWidth: 1,
           borderColor: Colors.grey[350],
@@ -30,7 +30,7 @@ class _WaterGraphState extends State<WaterGraph> {
           LinearBarPointer(
               enableAnimation: true,
               value: val,
-              thickness: 10,
+              thickness: 20,
               edgeStyle: LinearEdgeStyle.bothCurve,
               // color: kPurple_linear.colors[0],
               shaderCallback: (Rect bounds) {
