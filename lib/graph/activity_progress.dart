@@ -29,7 +29,7 @@ class Activity_ProgressState extends State<Activity_Progress> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(top: 10),
+      margin: const EdgeInsets.only(top: 10,bottom: 15),
       decoration: kShadowContainer,
       child: AspectRatio(
         aspectRatio: 1.5,

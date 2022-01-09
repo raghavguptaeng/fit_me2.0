@@ -38,52 +38,85 @@ class TodaysTarget extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Container(
-              child: Padding(
-                padding: EdgeInsets.all(width*0.04),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text("Today Target",style: kBigTextHeading.copyWith(fontSize: 15),),
-                        Container(
-                          height: height*0.04,
-                          width: height*0.04,
-                          decoration: BoxDecoration(
-                              gradient: kBlue_linear,
-                              borderRadius: BorderRadius.circular(10)
-                          ),
-                          child: Icon(CupertinoIcons.add,color: Colors.white,),
-                        )
-                      ],
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Target_Card(width: width, height: height,image: 'foot.png',title: 'Foot Steps',value: '2400',),
-                        Target_Card(width: width, height: height, image: 'water.png',title: 'Water Intake',value: '8L',),
-                      ],
-                    )
-                  ],
-                ),
-              ),
-              width: width,
-              height: height*0.2,
-              decoration: kBlueContainer,
-              margin: EdgeInsets.only(bottom: 10),
-            ),
-            Row(
-              children: [
-                Text("Activity Progress",style: kBigTextHeading.copyWith(fontSize: 15),),
-              ],
-            ),
+            Today_Target_Card(width: width, height: height),
+            activityProgress(),
             Activity_Progress(),
+            latestActivity(),
           ],
         ),
       ),
+    );
+  }
+
+  Row activityProgress() {
+    return Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text("Activity Progress",style: kBigTextHeading.copyWith(fontSize: 18),),
+              Text("See more",style: kSubTextStyle.copyWith(color: Colors.grey),)
+            ],
+          );
+  }
+
+  Row latestActivity() {
+    return Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text("Latest Activity",style: kBigTextHeading.copyWith(fontSize: 18),),
+              Text("See more",style: kSubTextStyle.copyWith(color: Colors.grey),)
+            ],
+          );
+  }
+}
+
+class Today_Target_Card extends StatelessWidget {
+  const Today_Target_Card({
+    Key? key,
+    required this.width,
+    required this.height,
+  }) : super(key: key);
+
+  final double width;
+  final double height;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Padding(
+        padding: EdgeInsets.all(width*0.04),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text("Today Target",style: kBigTextHeading.copyWith(fontSize: 15),),
+                Container(
+                  height: height*0.04,
+                  width: height*0.04,
+                  decoration: BoxDecoration(
+                      gradient: kBlue_linear,
+                      borderRadius: BorderRadius.circular(10)
+                  ),
+                  child: Icon(CupertinoIcons.add,color: Colors.white,),
+                )
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Target_Card(width: width, height: height,image: 'foot.png',title: 'Foot Steps',value: '2400',),
+                Target_Card(width: width, height: height, image: 'water.png',title: 'Water Intake',value: '8L',),
+              ],
+            )
+          ],
+        ),
+      ),
+      width: width,
+      height: height*0.2,
+      decoration: kBlueContainer,
+      margin: EdgeInsets.only(bottom: 10),
     );
   }
 }
