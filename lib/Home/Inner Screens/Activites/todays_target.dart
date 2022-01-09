@@ -1,5 +1,6 @@
 import 'package:fit_me/Home/home.dart';
 import 'package:fit_me/contants/constants.dart';
+import 'package:fit_me/graph/activity_progress.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -44,7 +45,21 @@ class TodaysTarget extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Text("Today Target",style: kBigTextHeading.copyWith(fontSize: 15),),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text("Today Target",style: kBigTextHeading.copyWith(fontSize: 15),),
+                        Container(
+                          height: height*0.04,
+                          width: height*0.04,
+                          decoration: BoxDecoration(
+                              gradient: kBlue_linear,
+                              borderRadius: BorderRadius.circular(10)
+                          ),
+                          child: Icon(CupertinoIcons.add,color: Colors.white,),
+                        )
+                      ],
+                    ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
@@ -62,9 +77,10 @@ class TodaysTarget extends StatelessWidget {
             ),
             Row(
               children: [
-                Text("Activity Progress",style: kBigTextHeading.copyWith(fontSize: 15),)
+                Text("Activity Progress",style: kBigTextHeading.copyWith(fontSize: 15),),
               ],
-            )
+            ),
+            Activity_Progress(),
           ],
         ),
       ),
@@ -88,7 +104,7 @@ class Target_Card extends StatelessWidget {
     return Container(
       width: width*0.37,
       height: height*0.1,
-      decoration: kRoundedContainer,
+      decoration: kShadowContainer,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
