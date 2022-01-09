@@ -4,6 +4,7 @@ import 'package:fit_me/Authentication/Signup/user_preference.dart';
 import 'package:fit_me/Splash%20Screens/splash_1.dart';
 import 'package:fit_me/Splash%20Screens/welcome.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
 
 import 'Authentication/Login/login.dart';
 import 'Splash Screens/splash_2.dart';
@@ -18,7 +19,7 @@ class init extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       // initialRoute: welcome.id,
       initialRoute: Login.id,
       routes: {

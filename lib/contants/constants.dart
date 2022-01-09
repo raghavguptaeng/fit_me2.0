@@ -15,7 +15,7 @@ const kRoundedBigButton = BoxDecoration(
     gradient: kBlue_linear,
     borderRadius: BorderRadius.all(Radius.circular(99)));
 TextStyle kBigTextHeading = GoogleFonts.poppins(
-    fontWeight: FontWeight.w700, fontSize: 24, color: Colors.black);
+    fontWeight: FontWeight.w700, fontSize: 20, color: Colors.black);
 TextStyle kSubTextStyle = GoogleFonts.poppins(
     fontWeight: FontWeight.w400, fontSize: 14, color: Colors.black);
 InputDecoration kInputTextDecoration = InputDecoration(
@@ -84,3 +84,8 @@ TextStyle klinearTextPurple(width){
       ..shader = kPurple_linear.createShader(Rect.largest),
   );
 }
+
+var kBlueContainer = BoxDecoration(
+    color: Color(0xFFCCDCFD),
+    borderRadius: BorderRadius.circular(25)
+);

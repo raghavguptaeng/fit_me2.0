@@ -1,3 +1,4 @@
+import 'package:fit_me/Home/Inner%20Screens/Activites/todays_target.dart';
 import 'package:fit_me/Home/innerComponents/calories.dart';
 import 'package:fit_me/Home/innerComponents/steps.dart';
 import 'package:fit_me/Home/innerComponents/water_intake.dart';
@@ -6,6 +7,7 @@ import 'package:fit_me/graph/activity_status.dart';
 import 'package:fit_me/graph/calories_graph.dart';
 import 'package:fit_me/graph/water.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 class Home extends StatefulWidget {
   // ignore: non_constant_identifier_names
@@ -72,10 +74,7 @@ class _HomeState extends State<Home> {
     return Container(
               width: width*0.9,
               height: height*0.08,
-              decoration: BoxDecoration(
-                  color: Color(0xFFCCDCFD),
-                  borderRadius: BorderRadius.circular(25)
-              ),
+              decoration: kBlueContainer,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
@@ -83,6 +82,7 @@ class _HomeState extends State<Home> {
                   GestureDetector(
                     onTap: () {
                       //todo:add Target Button Here
+                      Get.to(const TodaysTarget());
                     },
                     child: Container(
                         height: height * 0.05,
