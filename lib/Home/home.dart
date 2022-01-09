@@ -82,7 +82,7 @@ class _HomeState extends State<Home> {
                   GestureDetector(
                     onTap: () {
                       //todo:add Target Button Here
-                      Get.to(const TodaysTarget());
+                      Get.to(() => const TodaysTarget());
                     },
                     child: Container(
                         height: height * 0.05,

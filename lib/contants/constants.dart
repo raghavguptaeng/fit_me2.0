@@ -42,8 +42,11 @@ const kWaterIntakeLinear = LinearGradient(
   begin: Alignment.topCenter,
   end: Alignment.bottomCenter,
 );
-const kRoundedContainer = BoxDecoration(
+const kRoundedContainerPurple = BoxDecoration(
     gradient: kPurple_linear,
+    borderRadius: BorderRadius.all(Radius.circular(15)));
+const kRoundedContainer = BoxDecoration(
+    color: Colors.white,
     borderRadius: BorderRadius.all(Radius.circular(15)));
 BoxDecoration kBmiCardDecoration = BoxDecoration(
     gradient: kBlue_linear,
@@ -86,6 +89,6 @@ TextStyle klinearTextPurple(width){
 }
 
 var kBlueContainer = BoxDecoration(
-    color: Color(0xFFCCDCFD),
+    color: Color(0xFFCCDCFD).withOpacity(0.55),
     borderRadius: BorderRadius.circular(25)
 );

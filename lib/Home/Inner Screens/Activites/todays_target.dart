@@ -38,6 +38,24 @@ class TodaysTarget extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
+              child: Padding(
+                padding: EdgeInsets.all(width*0.04),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Text("Today Target",style: kBigTextHeading.copyWith(fontSize: 15),),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Target_Card(width: width, height: height,image: 'foot.png',title: 'Foot Steps',value: '2400',),
+                        Target_Card(width: width, height: height, image: 'water.png',title: 'Water Intake',value: '8L',),
+                      ],
+                    )
+                  ],
+                ),
+              ),
+              width: width,
               height: height*0.2,
               decoration: kBlueContainer,
               margin: EdgeInsets.only(bottom: 10),
@@ -49,6 +67,44 @@ class TodaysTarget extends StatelessWidget {
             )
           ],
         ),
+      ),
+    );
+  }
+}
+
+class Target_Card extends StatelessWidget {
+  const Target_Card({
+    Key? key,
+    required this.width,
+    required this.height, required this.image, required this.title, required this.value,
+  }) : super(key: key);
+
+  final double width;
+  final double height;
+  final String image,title,value;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: width*0.37,
+      height: height*0.1,
+      decoration: kRoundedContainer,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Image.asset('Assets/images/${image}',height: height*0.045,),
+          Container(
+            width: width*0.27,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Text(value,style: klinearTextBlue(width),),
+                Text(title,style: kSubTextStyle,)
+              ],
+            ),
+          )
+        ],
       ),
     );
   }

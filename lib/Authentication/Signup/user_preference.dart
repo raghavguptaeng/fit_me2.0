@@ -112,7 +112,7 @@ class PreferenceCard extends StatelessWidget {
       child: Container(
         width: width * 0.8,
         height: height * 0.65,
-        decoration: kRoundedContainer.copyWith(gradient: kBlue_linear),
+        decoration: kRoundedContainerPurple.copyWith(gradient: kBlue_linear),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
