@@ -1,9 +1,12 @@
-import 'package:fit_me/Authentication/Login/greeting_user.dart';
+
+import 'package:fit_me/constants/constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
 
-import '../../contants/constants.dart';
+import 'greeting_user.dart';
+
 
 class Login extends StatelessWidget {
   static String id = '/Login';
@@ -61,7 +64,7 @@ class Login extends StatelessWidget {
             onTap: () {
               // Navigator.pushReplacementNamed(context, GetUserDetails.id );
               //todo:send user name to greeting screen
-              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>Greeting('Raghav')));
+              Get.to(()=>Greeting('Raghav'));
             },
             child: Container(
                 height: height * 0.08,

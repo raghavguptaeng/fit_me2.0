@@ -1,8 +1,8 @@
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:fit_me/Authentication/Login/login.dart';
+import 'package:fit_me/constants/constants.dart';
+import 'package:fit_me/view/Authentication/Login/login.dart';
 import 'package:flutter/material.dart';
 
-import '../../contants/constants.dart';
 
 class GetUserPreference extends StatelessWidget {
   const GetUserPreference({Key? key}) : super(key: key);

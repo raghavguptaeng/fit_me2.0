@@ -1,15 +1,15 @@
-import 'package:fit_me/Authentication/Signup/sign_up.dart';
-import 'package:fit_me/Authentication/Signup/take_user_details.dart';
-import 'package:fit_me/Authentication/Signup/user_preference.dart';
-import 'package:fit_me/Splash%20Screens/splash_1.dart';
-import 'package:fit_me/Splash%20Screens/welcome.dart';
+import 'package:fit_me/view/Authentication/Login/login.dart';
+import 'package:fit_me/view/Authentication/Signup/sign_up.dart';
+import 'package:fit_me/view/Authentication/Signup/take_user_details.dart';
+import 'package:fit_me/view/Authentication/Signup/user_preference.dart';
+import 'package:fit_me/view/Splash%20Screens/splash_1.dart';
+import 'package:fit_me/view/Splash%20Screens/splash_2.dart';
+import 'package:fit_me/view/Splash%20Screens/splash_3.dart';
+import 'package:fit_me/view/Splash%20Screens/splash_4.dart';
+import 'package:fit_me/view/Splash%20Screens/welcome.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 
-import 'Authentication/Login/login.dart';
-import 'Splash Screens/splash_2.dart';
-import 'Splash Screens/splash_3.dart';
-import 'Splash Screens/splash_4.dart';
 
 void main() {
   runApp(const init());

@@ -1,5 +1,5 @@
-import 'package:fit_me/Splash%20Screens/splash_2.dart';
-import 'package:fit_me/contants/constants.dart';
+import 'package:fit_me/constants/constants.dart';
+import 'package:fit_me/view/Splash%20Screens/splash_2.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 

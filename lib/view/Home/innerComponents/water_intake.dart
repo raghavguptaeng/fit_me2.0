@@ -1,10 +1,12 @@
-import 'package:fit_me/contants/constants.dart';
-import 'package:fit_me/graph/water.dart';
+import 'package:fit_me/constants/constants.dart';
+import 'package:fit_me/controllers/water_controller.dart';
+import 'package:fit_me/view/graph/water.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class WaterIntake extends StatelessWidget {
-  const WaterIntake({Key? key}) : super(key: key);
-
+  WaterIntake({Key? key}) : super(key: key);
+  final WaterControllers _waterControllers = Get.put(WaterControllers());
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
@@ -42,11 +44,23 @@ class WaterIntake extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text('Real time updates',style: kSubTextStyle.copyWith(fontSize: width*0.030),),
-                    waterIntake(width,'6am - 8am',600),
-                    waterIntake(width,'9am - 11am',500),
-                    waterIntake(width,'11am - 2pm',1000),
-                    waterIntake(width,'2pm - 4pm',700),
-                    waterIntake(width,'4pm - now',900)
+                    Obx((){
+                      return SizedBox(
+                        height: height*0.3,
+                        width: width*0.2,
+                        child: ListView.builder(
+                          shrinkWrap: true,
+                          physics: BouncingScrollPhysics(),
+                          itemCount: _waterControllers.water.length,
+                          itemBuilder: (context,index){
+                            var data = _waterControllers.water[index];
+                            return waterIntake(width,data.time,data.quantity);
+                          },
+                        ),
+                      );
+                      // return WaterIntake()
+                    }
+                    )
                   ],
                 )
               ],

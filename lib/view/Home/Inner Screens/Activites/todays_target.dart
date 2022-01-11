@@ -1,6 +1,5 @@
-import 'package:fit_me/Home/home.dart';
-import 'package:fit_me/contants/constants.dart';
-import 'package:fit_me/graph/activity_progress.dart';
+import 'package:fit_me/constants/constants.dart';
+import 'package:fit_me/view/graph/activity_progress.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -33,16 +32,19 @@ class TodaysTarget extends StatelessWidget {
         actions: [Container(width: width*0.13,)],
       ),
       backgroundColor: Colors.white,
-      body: Padding(
-        padding:  EdgeInsets.all(width*0.05),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Today_Target_Card(width: width, height: height),
-            activityProgress(),
-            Activity_Progress(),
-            latestActivity(),
-          ],
+      body: SingleChildScrollView(
+        physics: const BouncingScrollPhysics(),
+        child: Padding(
+          padding:  EdgeInsets.all(width*0.05),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Today_Target_Card(width: width, height: height),
+              activityProgress(),
+              Activity_Progress(),
+              latestActivity(),
+            ],
+          ),
         ),
       ),
     );

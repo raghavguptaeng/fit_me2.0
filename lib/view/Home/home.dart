@@ -1,14 +1,13 @@
-import 'package:fit_me/Home/Inner%20Screens/Activites/todays_target.dart';
-import 'package:fit_me/Home/innerComponents/calories.dart';
-import 'package:fit_me/Home/innerComponents/steps.dart';
-import 'package:fit_me/Home/innerComponents/water_intake.dart';
-import 'package:fit_me/contants/constants.dart';
-import 'package:fit_me/graph/activity_status.dart';
-import 'package:fit_me/graph/calories_graph.dart';
-import 'package:fit_me/graph/water.dart';
+import 'package:fit_me/constants/constants.dart';
+import 'package:fit_me/view/graph/activity_status.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
+
+import 'Inner Screens/Activites/todays_target.dart';
+import 'innerComponents/calories.dart';
+import 'innerComponents/steps.dart';
+import 'innerComponents/water_intake.dart';
 class Home extends StatefulWidget {
   // ignore: non_constant_identifier_names
   Home({required this.Uname,required this.uid});

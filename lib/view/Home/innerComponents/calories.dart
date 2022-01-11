@@ -1,5 +1,5 @@
-import 'package:fit_me/contants/constants.dart';
-import 'package:fit_me/graph/calories_graph.dart';
+import 'package:fit_me/constants/constants.dart';
+import 'package:fit_me/view/graph/calories_graph.dart';
 import 'package:flutter/material.dart';
 
 class Calories extends StatelessWidget {
