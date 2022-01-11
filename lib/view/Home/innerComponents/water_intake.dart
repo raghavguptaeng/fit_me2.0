@@ -1,6 +1,7 @@
 import 'package:fit_me/constants/constants.dart';
 import 'package:fit_me/controllers/water_controller.dart';
 import 'package:fit_me/view/graph/water.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -45,19 +46,27 @@ class WaterIntake extends StatelessWidget {
                   children: [
                     Text('Real time updates',style: kSubTextStyle.copyWith(fontSize: width*0.030),),
                     Obx((){
-                      return SizedBox(
-                        height: height*0.3,
-                        width: width*0.2,
-                        child: ListView.builder(
-                          shrinkWrap: true,
-                          physics: BouncingScrollPhysics(),
-                          itemCount: _waterControllers.water.length,
-                          itemBuilder: (context,index){
-                            var data = _waterControllers.water[index];
-                            return waterIntake(width,data.time,data.quantity);
-                          },
-                        ),
-                      );
+                      if(_waterControllers.isLoading.value) {
+                        return Container(
+                          width: width*0.2,
+                          height: height*0.35,
+                          child: Center(child: CupertinoActivityIndicator()),
+                        );
+                      }
+                      else {
+                        return SizedBox(
+                          width: width*0.2,
+                          child: ListView.builder(
+                            shrinkWrap: true,
+                            physics: NeverScrollableScrollPhysics(),
+                            itemCount: _waterControllers.water.length,
+                            itemBuilder: (context,index){
+                              var data = _waterControllers.water[index];
+                              return waterIntake(width,data.time,data.quantity);
+                            },
+                          ),
+                        );
+                      }
                       // return WaterIntake()
                     }
                     )
