@@ -6,6 +6,7 @@ import 'package:syncfusion_flutter_charts/charts.dart';
 
 import 'Inner Screens/Activites/todays_target.dart';
 import 'innerComponents/calories.dart';
+import 'innerComponents/others.dart';
 import 'innerComponents/steps.dart';
 import 'innerComponents/water_intake.dart';
 class Home extends StatefulWidget {
@@ -34,7 +35,8 @@ class _HomeState extends State<Home> {
               ActivityStatusText(),
               ActivityStatus(),
               ActivityContent(width, height),
-              SizedBox(height: height*0.2,),
+              SizedBox(height: height*0.05,),
+              activity(width, height),
             ],
           ),
         ),
@@ -57,6 +59,27 @@ class _HomeState extends State<Home> {
                 ],
               ),
             );
+  }
+
+  Container activity(width,height){
+    return Container(
+      margin: EdgeInsets.all(12),
+      child: Column(
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text("Latest Workout",style: kBigTextHeading.copyWith(fontSize: 18),),
+              Text("See more",style: kSubTextStyle.copyWith(color: Colors.grey),)
+            ],
+          ),
+          latestCard(height, width),
+          latestCard(height, width),
+          latestCard(height, width),
+          latestCard(height, width),
+        ],
+      ),
+    );
   }
 
   Padding ActivityStatusText() {

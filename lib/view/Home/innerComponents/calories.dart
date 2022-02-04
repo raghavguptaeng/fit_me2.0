@@ -16,7 +16,7 @@ class Calories extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text("Calories",style: kBigTextHeading.copyWith(fontSize: width * 0.04),),
-          Text("760 kCal",style: klinearTextBlue(width),),
+          Text("760 kCal",style: klinearTextBlue(width*0.8),),
           Center(
             child: Container(
                 height: height*0.15,
@@ -24,6 +24,6 @@ class Calories extends StatelessWidget {
           ),
         ],
     ),
-      ),width: width*0.4,height: height*0.23,decoration: kShadowContainer,);
+      ),width: width*0.4,height: height*0.25,decoration: kShadowContainer,);
   }
 }

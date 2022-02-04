@@ -1,4 +1,5 @@
 import 'package:fit_me/constants/constants.dart';
+import 'package:fit_me/view/Home/innerComponents/others.dart';
 import 'package:fit_me/view/graph/activity_progress.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -42,11 +43,29 @@ class TodaysTarget extends StatelessWidget {
               Today_Target_Card(width: width, height: height),
               activityProgress(),
               Activity_Progress(),
-              latestActivity(),
+              activity(width,height),
             ],
           ),
         ),
       ),
+    );
+  }
+
+  Column activity(width,height){
+    return Column(
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text("Latest Activity",style: kBigTextHeading.copyWith(fontSize: 18),),
+            Text("See more",style: kSubTextStyle.copyWith(color: Colors.grey),)
+          ],
+        ),
+        latestCard(height, width),
+        latestCard(height, width),
+        latestCard(height, width),
+        latestCard(height, width),
+      ],
     );
   }
 
@@ -60,16 +79,9 @@ class TodaysTarget extends StatelessWidget {
           );
   }
 
-  Row latestActivity() {
-    return Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text("Latest Activity",style: kBigTextHeading.copyWith(fontSize: 18),),
-              Text("See more",style: kSubTextStyle.copyWith(color: Colors.grey),)
-            ],
-          );
-  }
 }
+
+
 
 class Today_Target_Card extends StatelessWidget {
   const Today_Target_Card({
