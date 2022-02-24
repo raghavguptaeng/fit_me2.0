@@ -7,6 +7,11 @@ class remoteServices{
     var dio = Dio();
     final response = await dio.get(water_api);
     print(response.data['data']);
-    return(response.data['data']);
+    List<WaterIntakeModel> lst = [];
+    for(int i=0 ; i<response.data['data'].length ; ++i){
+      print(response.data['data'][i]);
+      lst.add(WaterIntakeModel(time: response.data['data'][i]["time"].toString(), quantity: response.data['data'][i]['quantity']));
+    }
+    return(lst);
   }
 }
