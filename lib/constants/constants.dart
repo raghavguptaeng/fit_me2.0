@@ -16,8 +16,10 @@ const kRoundedBigButton = BoxDecoration(
     borderRadius: BorderRadius.all(Radius.circular(99)));
 TextStyle kBigTextHeading = GoogleFonts.poppins(
     fontWeight: FontWeight.w700, fontSize: 20, color: Colors.black);
+
 TextStyle kSubTextStyle = GoogleFonts.poppins(
     fontWeight: FontWeight.w400, fontSize: 14, color: Colors.black);
+
 InputDecoration kInputTextDecoration = InputDecoration(
   fillColor: Colors.white,
   border: OutlineInputBorder(

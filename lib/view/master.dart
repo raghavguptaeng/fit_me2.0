@@ -1,6 +1,8 @@
 import 'package:fit_me/view/Home/home.dart';
 import 'package:flutter/material.dart';
 
+import 'Profile/profile.dart';
+
 class Master extends StatefulWidget {
   const Master({Key? key}) : super(key: key);
 
@@ -13,15 +15,17 @@ class _MasterState extends State<Master> {
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
-
     return Scaffold(
       body: Container(
           child: Stack(
         children: [
           IndexedStack(
-            index: 0,
+            index: curr,
             children: [
               SafeArea(child: Home(Uname: 'sdf', uid: 'sdf')),
+              Container(),
+              Container(),
+              Profile(),
             ],
           ),
           Positioned(

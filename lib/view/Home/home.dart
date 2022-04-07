@@ -33,6 +33,8 @@ class _HomeState extends State<Home> {
           ActivityContent(width, height),
           SizedBox(height: height*0.05,),
           activity(width, height),
+          SizedBox(height: height*0.05,),
+          SizedBox(height: height*0.05,),
         ],
       ),
     );
