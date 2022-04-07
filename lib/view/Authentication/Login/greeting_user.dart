@@ -1,6 +1,7 @@
 
 import 'package:fit_me/constants/constants.dart';
 import 'package:fit_me/view/Home/home.dart';
+import 'package:fit_me/view/master.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -24,7 +25,7 @@ class Greeting extends StatelessWidget {
               onTap: () {
                 // Navigator.pushReplacementNamed(context, GetUserDetails.id );
                 //todo:send user name and user id to home screen
-                Get.to(()=>Home(Uname: 'Raghav', uid: 'demo'));
+                Get.to(()=>Master());
               },
               child: Container(
                   height: height * 0.08,

@@ -8,6 +8,12 @@ import 'package:get/get.dart';
 class WaterIntake extends StatelessWidget {
   WaterIntake({Key? key}) : super(key: key);
   final WaterControllers _waterControllers = Get.put(WaterControllers());
+  String getTotalWater(value){
+    if(value.toString().length>3) {
+      return (value/1000).toString().substring(0,3)+' Liters';
+    }
+    return value.toString()+' Liters';
+  }
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
@@ -35,10 +41,18 @@ class WaterIntake extends StatelessWidget {
                       'Water Intake',
                       style: kBigTextHeading.copyWith(fontSize: width * 0.04),
                     ),
-                    Text(
-                      '4 Liters', //todo: add water intake
-                      style:klinearTextBlue(width),
-                    ),
+                    Obx((){
+                      if(_waterControllers.isLoading.value){
+                        return CupertinoActivityIndicator();
+                      }
+                      else{
+                        return Text(
+                          getTotalWater(_waterControllers.total.value
+                          ), //todo: add water intake
+                          style:klinearTextBlue(width),
+                        );
+                      }
+                    })
                   ],
                 ),
                 Column(

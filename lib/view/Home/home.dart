@@ -1,5 +1,4 @@
 import 'package:fit_me/constants/constants.dart';
-import 'package:fit_me/view/graph/activity_status.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
@@ -22,24 +21,19 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
     var height = MediaQuery.of(context).size.height;
-    return Scaffold(
-      body: SafeArea(
-        child: SingleChildScrollView(
-          physics: BouncingScrollPhysics(),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              TopGreeting(width),
-              Center(child: BmiCard(width, height)),
-              Center(child: Today_Target_card(width, height)),
-              ActivityStatusText(),
-              ActivityStatus(),
-              ActivityContent(width, height),
-              SizedBox(height: height*0.05,),
-              activity(width, height),
-            ],
-          ),
-        ),
+    return SingleChildScrollView(
+      physics: BouncingScrollPhysics(),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          TopGreeting(width),
+          Center(child: BmiCard(width, height)),
+          Center(child: Today_Target_card(width, height)),
+          ActivityStatusText(),
+          ActivityContent(width, height),
+          SizedBox(height: height*0.05,),
+          activity(width, height),
+        ],
       ),
     );
   }
@@ -73,10 +67,10 @@ class _HomeState extends State<Home> {
               Text("See more",style: kSubTextStyle.copyWith(color: Colors.grey),)
             ],
           ),
-          latestCard(height, width),
-          latestCard(height, width),
-          latestCard(height, width),
-          latestCard(height, width),
+          activityCard(height, width),
+          activityCard(height, width),
+          activityCard(height, width),
+          activityCard(height, width),
         ],
       ),
     );

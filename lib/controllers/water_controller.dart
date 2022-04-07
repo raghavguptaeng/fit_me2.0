@@ -10,6 +10,7 @@ class WaterControllers extends GetxController{
   void onInit() {
     super.onInit();
     getWater();
+    totalQty();
   }
   void getWater()async{
     try{
@@ -26,5 +27,14 @@ class WaterControllers extends GetxController{
     finally{
       isLoading(false);
     }
+  }
+
+  Future<void> totalQty() async {
+    var tot = 0;
+    var waters = await remoteServices.fetch_water();
+    for(int i=0 ; i<waters.length ; ++i){
+      tot+=waters[i].quantity;
+    }
+    total.value = tot;
   }
 }
